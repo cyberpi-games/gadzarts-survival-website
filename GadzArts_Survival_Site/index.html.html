@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadz'Arts Survival - L'Ultime Défi de Première Année</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FF5722; /* Orange vif pour l'accent */
+            --color-secondary: #000000; /* Noir profond */
+            --color-text-light: #E0E0E0; /* Gris clair pour le texte */
+            --color-text-dark: #A0A0A0; /* Gris foncé */
+            --color-background-dark: #1A1A1A; /* Fond sombre */
+            --color-button-hover: #E64A19;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--color-text-light);
+            background-color: var(--color-background-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--color-secondary);
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-primary);
+        }
+
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./images/hero_background.jpg'); /* Placeholder, remplacer par l'image générée */
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.6);
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-buttons a:hover {
+            background-color: var(--color-button-hover);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            color: var(--color-primary);
+        }
+
+        .intro-game, .intro-console {img src="./images/console_physical.jpg" alt="Photos de la console physique"
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .intro-game.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .intro-text h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+
+        .intro-image {img src="./images/game_action.jpg" alt="Images du jeu en action"
+            flex: 1;
+            text-align: center;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .video-section {
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .video-section h2 {
+            margin-bottom: 30px;
+        }
+
+        .video-player {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .video-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Gadz'Arts Survival</a>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#le-jeu">Le Jeu</a></li>
+                    <li><a href="#la-console">La Console</a></li>
+                    <li><a href="#l-equipe">L'Équipe</a></li>
+                    <li><a href="#multimedia">Multimédia</a></li>
+                    <li><a href="#acheter">Acheter</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" id="accueil">
+            <div class="hero-background"></div> 
+            <div class="hero-content">
+                <h1>Gadz'Arts Survival</h1>
+                <p>Plongez dans l'ultime défi de première année. Explorez le campus d'Angers, rassemblez des assets, et survivez dans cette aventure immersive inspirée de l'esprit Gadz'Arts.</p>
+                <div class="cta-buttons">
+                    <a href="#acheter">Précommandez la Console Édition Amphithéâtre</a>
+                    <a href="#acheter">Achetez le Jeu</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <h2 class="section-title" id="le-jeu">Le Jeu : Un Univers Riche et Authentique</h2>
+            <section class="intro-game">
+                <div class="intro-text">
+                    <h3>Explorez le Campus d'Angers comme Jamais</h3>
+                    <p>Incarnez un bizuth de première année jeté dans un campus d'Angers désert, mais regorgeant de secrets. Chaque recoin, chaque bâtiment, chaque salle de classe cache des indices et des ressources vitales pour votre survie. Le jeu mêle habilement l'exploration, la gestion de ressources et la narration immersive, le tout teinté de l'esprit Gadz'Arts.</p>
+                </div>
+                <div class="intro-image">
+                    
+                </div>
+            </section>
+
+            <h2 class="section-title" id="la-console">La Console : Un Chef-d'œuvre de Collection</h2>
+            <section class="intro-console reverse">
+                <div class="intro-text">
+                    <h3>Une Console Façonnée par l'Histoire</h3>
+                    <p>Découvrez la Console Gadz'Arts Survival, une pièce de collection unique en son genre. Son boîtier, minutieusement sculpté à l'effigie du majestueux Grand Amphithéâtre du campus d'Aix-en-Provence, est un hommage à l'héritage de notre école. Chaque détail a été pensé pour les passionnés et les collectionneurs.</p>
+                </div>
+                <div class="intro-image">
+                    
+                </div>
+            </section>
+
+            <h2 class="section-title" id="multimedia">Bande-Annonce Officielle de Lancement</h2>
+            <section class="video-section">
+                <div class="video-player">
+                    <!-- Intégrer ici une vidéo YouTube ou Vimeo. Exemple avec YouTube: -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Votre pied de page ici -->
+    </footer>
+</body>
+</html>
